@@ -47,3 +47,15 @@ Se puede ver que la cantidad de paquetes que se envían desde 192.168.1.10 es mu
 
 Otro escenario que se podría identificar es la falla de un sistema la primera IP envía muchos paquetes y la segunda no responde con una cantidad similar, lo que podría interpretarse como algún ataque de denegación de servicios o que se tiene alguna falla durante el transporte de los quetes lo que causa que no retornen en su totalidad.  
 
+# Parte de diseño 
+
+- Diagrama de camara que simula trafico de personas y vehiculos
+
+  <img width="3257" height="2452" alt="Diagrama 1" src="https://github.com/user-attachments/assets/a23695e4-95a1-4c63-9f40-03f0d0092dfa" />
+  
+- ¿Cómo comunicaría el contenedor YOLO con la VM para que el tráfico de detecciones sea muestreado por NetFlow?
+  
+El contenedor que ejecuta YOLO debe enviar los resultados de detección a la VM utilizando tráfico de red estándar, ya que NetFlow solo puede analizar paquetes IP que atraviesan una interfaz de red, La comunicación se establece haciendo que el contenedor Docker y la VM estén conectados a la misma red virtual, El tráfico pasa por el switch virtual (Linux bridge docker0), donde softflowd lo captura y exporta flujos NetFlow al colector.
+de modo que el tráfico fluya entre direcciones IP distintas. La VM actúa como servidor receptor de las detecciones y, al mismo tiempo, ejecuta un exportador NetFlow (como softflowd) sobre la interfaz por donde entra ese tráfico. Esto garantiza que los paquetes enviados desde el contenedor YOLO hacia la VM atraviesen una interfaz monitoreada.
+
+
