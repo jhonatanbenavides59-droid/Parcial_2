@@ -21,3 +21,18 @@ El Netflow se enfoca en recolectar la mayor cantidad de información de que circ
 enlace de 100 Gbps?
 
 En el escenario de tener monitorear un enlace de 100 GB donde se requiere detectar cual es el toptalkers (equipo,usuario,aplicación que más consumo tenga dentro de la red) se usaría sFlows el cual me permitía identificar el toptalkers usando pocos recursos de los dispositivos manteniendo el rendimiento de la red.
+
+¿Describa los 5 campos que componen la 5 tuple en un flujo NetFlow?
+
+Los 5 campos son:
+
+1. IP de origen — dirección de capa 3 del host que inicia la comunicación. Puede ser IPv4 (32 bits) o IPv6 (128 bits)
+   
+2. IP de destino — dirección del host receptor. Junto con la IP origen forma el par de extremos de la conversación. Permite construir matrices de tráfico entre segmentos.
+   
+3. Puerto de origen — puerto asignado por el SO al proceso cliente, típicamente en el rango 49152–65535. Cambia en cada nueva conexión TCP/UDP, por eso cada sesión genera una entrada distinta en la tabla de flujos.
+   
+4. Puerto de destino — puerto (443 = HTTPS, 80 = HTTP, 53 = DNS, 22 = SSH). Es el campo más útil para clasificar el tráfico por aplicación sin inspección profunda.
+   
+5. Protocolo IP — número del protocolo de transporte según IANA. Los más comunes son TCP (6), UDP (17) e ICMP (1). Para ICMP no existen puertos, por lo que los campos 3 y 4 se interpretan como tipo y código ICMP.
+
