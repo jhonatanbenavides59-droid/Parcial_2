@@ -120,6 +120,15 @@ Con esto se genera un archivo llamado captura_udp-pcap para que se pueda analiza
 
 Al final se tiene una tabla con el resumen del resultado que se obtuvo del del 5 – tuple
 
+Se instalan las herramientas tcpdump, nfdump y nflow-gen para poder realizar un análisis más profundo
+
+<img width="452" height="112" alt="image" src="https://github.com/user-attachments/assets/01f27d2b-44ad-4cec-bb40-2588ae526344" />
+
+Continuamos con flujos NetFlow usando la herramienta nfdump, donde se observa direcciones IP y métricas de tráfico UDP (protocolo 17) desde la IP de origen 127.0.0.1 hacia la IP de destino 127.0.0.1, usando el puerto origen 41678 y el puerto destino 5555; durante este intervalo se contabilizan 20 paquetes que suman aproximadamente 1180 bytes.
+
+<img width="766" height="585" alt="image" src="https://github.com/user-attachments/assets/c104d51f-54ac-417d-a160-e932089bd6b2" />
+
+
 
 
 
