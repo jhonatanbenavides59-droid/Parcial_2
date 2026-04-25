@@ -102,6 +102,16 @@ Total 5 contenedores:
 
 Con una latencia base de 2 ms y un jitter de 1 ms, el protocolo más adecuado para el transporte de video en tiempo real es UDP no implementa mecanismos de control de congestión ni retransmisión de paquetes perdidos, lo que permite una entrega más rápida y continua de los datos, Para mitigar el jitter en el receptor, se usaría búfer de jitter. Este búfer almacena temporalmente los paquetes entrantes y los reproduce a un ritmo constante, compensando las variaciones en el tiempo de llegada
 
+## Parte empirica
+
+# paso uno
+
+Se realiza la configuración del Google Colab para que se ejecute la captura de datos usando un video de test con YOLO que logre realizar tráfico para análisis el funcionamiento de las herramientas y de los protocolos que se usan
+
+<img width="409" height="268" alt="Paso 1" src="https://github.com/user-attachments/assets/bc67aa5c-78d6-49a9-a7e7-dec4ac225e74" />
+
+
+
 
 
 
