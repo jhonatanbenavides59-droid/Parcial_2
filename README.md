@@ -132,12 +132,26 @@ El resultado indica que, en el intervalo de tiempo estudiado, no existen otras I
 <img width="1642" height="567" alt="image" src="https://github.com/user-attachments/assets/4e7a876e-2b36-455a-a943-585f6ef6ff02" />
 
 
+
 <img width="639" height="530" alt="image" src="https://github.com/user-attachments/assets/cdb03f10-c82a-4535-a7b5-6470b6137569" />
 
 
-La imagen describe el Paso 4 del proceso: IP Accounting usando iptables, donde se simula el comportamiento de un router Cisco para contabilizar tráfico de red, luego se crea una regla específica en la cadena INPUT para aceptar tráfico UDP dirigido al puerto 5555, que corresponde al servicio receptor de las detecciones; esta regla no bloquea paquetes, sino que permite que iptables cuente automáticamente los paquetes y bytes que coinciden
+IP Accounting usando iptables, donde se simula el comportamiento de un router Cisco para contabilizar tráfico de red, luego se crea una regla específica en la cadena INPUT para aceptar tráfico UDP dirigido al puerto 5555, que corresponde al servicio receptor de las detecciones; esta regla no bloquea paquetes, sino que permite que iptables cuente automáticamente los paquetes y bytes que coinciden
+
 
 <img width="551" height="351" alt="image" src="https://github.com/user-attachments/assets/b65313c5-11ad-481e-8cd9-514e587eae8a" />
+
+
+Ejecutar YOLO con contadores activos
+
+<img width="528" height="565" alt="image" src="https://github.com/user-attachments/assets/a41f6817-3d2a-4b7f-b1aa-27fb62f70ec8" />
+
+Primero se indica el comando utilizado (iptables -L INPUT -v -n) para consultar los contadores de paquetes y bytes asociados a las reglas de la cadena INPUT. Al no aparecer resultados directos con grep dpt:5555, se aclara que el tráfico loopback (127.0.0.1) puede no atravesar la cadena INPUT, por lo que se presenta el formato de salida esperado como en el parcial. En ese ejemplo, la regla muestra 20 paquetes y 340 bytes contabilizados, con acción ACCEPT, protocolo UDP y destino al puerto 5555. Finalmente, se explican las columnas de la salida, destacando que pkts y bytes permiten cuantificar el volumen de tráfico recibido, lo que confirma que IP
+
+<img width="699" height="567" alt="image" src="https://github.com/user-attachments/assets/63530832-ed1b-4a78-821b-0b0c8c75baae" />
+
+
+
 
 
 
