@@ -65,5 +65,20 @@ Una regla que se podría usar con iptables, es agregar una entrada para permitir
 - iptables -A FORWARD -s 172.17.0.0/16 -d 10.0.0.100 -j ACCEPT
 - iptables -A FORWARD -s 10.0.0.100 -d 172.17.0.0/16 -j ACCEPT
 
+## Diagrama de estación de trenes 
+
+<img width="3257" height="2452" alt="Diagrama estacion tren" src="https://github.com/user-attachments/assets/152cb32f-8d92-4e99-b80f-3904010982ed" />
+
+- Tabla de IP de contenedores
+
+  Contenedor	Función	Modelo YOLO	IP	Puerto
+C1	Lectura de placas (YOLO + OCR)	YOLOv8m + EasyOCR	10.0.0.10	9001
+C2	Conteo parqueadero	YOLOv8s	10.0.0.11	9002
+C3	Detección personas (aforo)	YOLOv8n	10.0.0.12	9003
+C4	Detección animales	YOLOv8n (custom)	10.0.0.13	9004
+C5	Objetos perdidos	YOLOv8m (custom)	10.0.0.14	9005
+<img width="905" height="175" alt="image" src="https://github.com/user-attachments/assets/0d368867-0262-47d0-a351-0fe1706d45a4" />
+
+
 
 
