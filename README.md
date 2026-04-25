@@ -110,6 +110,17 @@ Se realiza la configuración del Google Colab para que se ejecute la captura de 
 
 <img width="409" height="268" alt="Paso 1" src="https://github.com/user-attachments/assets/bc67aa5c-78d6-49a9-a7e7-dec4ac225e74" />
 
+Para este paso se usa una herramienta TCPdump para capturar datos UDP que por el puerto 5555
+
+<img width="469" height="260" alt="Paso 1_1" src="https://github.com/user-attachments/assets/b519012b-9375-40c0-84f8-f037ab247aba" />
+
+Con esto se genera un archivo llamado captura_udp-pcap para que se pueda analizar 
+
+<img width="344" height="211" alt="Paso 1_2" src="https://github.com/user-attachments/assets/7a0caf3e-f7b9-4da4-8cfa-eafad16b9238" />
+
+Al final se tiene una tabla con el resumen del resultado que se obtuvo del del 5 – tuple
+
+
 
 
 
