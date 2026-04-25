@@ -104,8 +104,6 @@ Con una latencia base de 2 ms y un jitter de 1 ms, el protocolo más adecuado pa
 
 ## Parte empirica
 
-# paso uno
-
 Se realiza la configuración del Google Colab para que se ejecute la captura de datos usando un video de test con YOLO que logre realizar tráfico para análisis el funcionamiento de las herramientas y de los protocolos que se usan
 
 <img width="409" height="268" alt="Paso 1" src="https://github.com/user-attachments/assets/bc67aa5c-78d6-49a9-a7e7-dec4ac225e74" />
@@ -127,7 +125,20 @@ Se instalan las herramientas tcpdump, nfdump y nflow-gen para poder realizar un 
 Continuamos con flujos NetFlow usando la herramienta nfdump, donde se observa direcciones IP y métricas de tráfico UDP (protocolo 17) desde la IP de origen 127.0.0.1 hacia la IP de destino 127.0.0.1, usando el puerto origen 41678 y el puerto destino 5555; durante este intervalo se contabilizan 20 paquetes que suman aproximadamente 1180 bytes.
 
 
-<img width="766" height="585" alt="image" src="https://github.com/user-attachments/assets/c104d51f-54ac-417d-a160-e932089bd6b2" />
+<img width="597" height="536" alt="image" src="https://github.com/user-attachments/assets/2f8a7dd8-ab60-4725-a7cd-3c2a648459de" />
+
+El resultado indica que, en el intervalo de tiempo estudiado, no existen otras IPs relevantes y que todo el tráfico registrado proviene de un único origen, facilitando así la identificación del Top Talker
+
+<img width="1642" height="567" alt="image" src="https://github.com/user-attachments/assets/4e7a876e-2b36-455a-a943-585f6ef6ff02" />
+
+
+<img width="639" height="530" alt="image" src="https://github.com/user-attachments/assets/cdb03f10-c82a-4535-a7b5-6470b6137569" />
+
+
+La imagen describe el Paso 4 del proceso: IP Accounting usando iptables, donde se simula el comportamiento de un router Cisco para contabilizar tráfico de red, luego se crea una regla específica en la cadena INPUT para aceptar tráfico UDP dirigido al puerto 5555, que corresponde al servicio receptor de las detecciones; esta regla no bloquea paquetes, sino que permite que iptables cuente automáticamente los paquetes y bytes que coinciden
+
+<img width="551" height="351" alt="image" src="https://github.com/user-attachments/assets/b65313c5-11ad-481e-8cd9-514e587eae8a" />
+
 
 
 
