@@ -87,6 +87,7 @@ Metadata JSON: 200 bytes/detección, 10 detecciones/s. Enviado por TCP.
 - Calcule el throughput (Mbps) por contenedor para video y metadata, Throughput total de los 5 contenedores
 
 Por contenedor:
+
   Video    = 30 fps × 50 KB/frame × 8 = 12.0 Mbps (UDP)
   Metadata = 10 det/s × 200 B × 8     = 0.016 Mbps (TCP)
   Total    ≈ 12.016 Mbps por contenedor
@@ -95,6 +96,11 @@ Total 5 contenedores:
   5 × 12.016 Mbps ≈ 60.08 Mbps
   
   Red requerida: ≥ 100 Mbps
+
+
+- La red tiene latencia base 2 ms y jitter 1 ms. ¿Qué protocolo (UDP o TCP) es más adecuado para el video? Justifique. ¿Cómo mitigaría el jitter en el receptor?
+
+Con una latencia base de 2 ms y un jitter de 1 ms, el protocolo más adecuado para el transporte de video en tiempo real es UDP no implementa mecanismos de control de congestión ni retransmisión de paquetes perdidos, lo que permite una entrega más rápida y continua de los datos, Para mitigar el jitter en el receptor, se usaría búfer de jitter. Este búfer almacena temporalmente los paquetes entrantes y los reproduce a un ritmo constante, compensando las variaciones en el tiempo de llegada
 
 
 
