@@ -148,7 +148,18 @@ Ejecutar YOLO con contadores activos
 
 Primero se indica el comando utilizado (iptables -L INPUT -v -n) para consultar los contadores de paquetes y bytes asociados a las reglas de la cadena INPUT. Al no aparecer resultados directos con grep dpt:5555, se aclara que el tráfico loopback (127.0.0.1) puede no atravesar la cadena INPUT, por lo que se presenta el formato de salida esperado como en el parcial. En ese ejemplo, la regla muestra 20 paquetes y 340 bytes contabilizados, con acción ACCEPT, protocolo UDP y destino al puerto 5555. Finalmente, se explican las columnas de la salida, destacando que pkts y bytes permiten cuantificar el volumen de tráfico recibido, lo que confirma que IP
 
+
 <img width="699" height="567" alt="image" src="https://github.com/user-attachments/assets/63530832-ed1b-4a78-821b-0b0c8c75baae" />
+
+
+combinando una visualización gráfica y la salida de iptables. A la izquierda se muestra un gráfico de barras que representa el tamaño de cada uno de los 20 paquetes UDP, observándose que todos tienen un tamaño muy similar, con un promedio cercano a 17 bytes por paquete, lo que indica tráfico pequeño y homogéneo, típico de mensajes de control o notificaciones. A la derecha, la tabla resume la salida de iptables -L -v -n filtrada por el puerto destino 5555, confirmando que se han contabilizado 20 paquetes y 340 bytes en total, usando el protocolo UDP y con política ACCEPT en la cadena INPUT
+
+
+<img width="1379" height="393" alt="image" src="https://github.com/user-attachments/assets/6f198f15-090e-4144-9646-cd10ff0eff0c" />
+
+
+
+
 
 
 
