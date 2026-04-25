@@ -62,6 +62,8 @@ de modo que el tráfico fluya entre direcciones IP distintas. La VM actúa como 
   
 Una regla que se podría usar con iptables, es agregar una entrada para permitir el tráfico entre esas redes y dejar que el contador de paquetes y bytes de la regla registre los paquetes transportados, esta regla no modifica el flujo de datos, sino que aprovechan los contadores internos de iptables para llevar un registro acumulado de tráfico. Luego, usando comandos como iptables -L -v -n, se pueden consultar los paquetes y bytes asociados a esa comunicación específica, ejemplo de la configuración de la regla:
 
-iptables -A FORWARD -s 172.17.0.0/16 -d 10.0.0.100 -j ACCEPT
-iptables -A FORWARD -s 10.0.0.100 -d 172.17.0.0/16 -j ACCEPT
+- iptables -A FORWARD -s 172.17.0.0/16 -d 10.0.0.100 -j ACCEPT
+- iptables -A FORWARD -s 10.0.0.100 -d 172.17.0.0/16 -j ACCEPT
+
+
 
