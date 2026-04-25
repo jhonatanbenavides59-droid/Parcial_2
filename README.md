@@ -70,12 +70,15 @@ Una regla que se podría usar con iptables, es agregar una entrada para permitir
 <img width="3257" height="2452" alt="Diagrama estacion tren" src="https://github.com/user-attachments/assets/152cb32f-8d92-4e99-b80f-3904010982ed" />
 
 - Tabla de IP de contenedores
+- 
 
 <img width="905" height="175" alt="image" src="https://github.com/user-attachments/assets/0d368867-0262-47d0-a351-0fe1706d45a4" />
 
 - Flujos de datos
+- 
 
 <img width="466" height="88" alt="image" src="https://github.com/user-attachments/assets/630ef708-61bc-4d16-8286-ec6935f0f908" />
+
 
 - Teniendo en cuenta los siguientes datos:
 Video procesado:30 fps, 640x480, JPEG comprimido → 50 frame. Enviado por UDP.
@@ -83,6 +86,15 @@ Metadata JSON: 200 bytes/detección, 10 detecciones/s. Enviado por TCP.
 
 - Calcule el throughput (Mbps) por contenedor para video y metadata, Throughput total de los 5 contenedores
 
+Por contenedor:
+  Video    = 30 fps × 50 KB/frame × 8 = 12.0 Mbps (UDP)
+  Metadata = 10 det/s × 200 B × 8     = 0.016 Mbps (TCP)
+  Total    ≈ 12.016 Mbps por contenedor
+
+Total 5 contenedores:
+  5 × 12.016 Mbps ≈ 60.08 Mbps
+  
+  Red requerida: ≥ 100 Mbps
 
 
 
