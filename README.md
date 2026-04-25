@@ -58,4 +58,10 @@ Otro escenario que se podría identificar es la falla de un sistema la primera I
 El contenedor que ejecuta YOLO debe enviar los resultados de detección a la VM utilizando tráfico de red estándar, ya que NetFlow solo puede analizar paquetes IP que atraviesan una interfaz de red, La comunicación se establece haciendo que el contenedor Docker y la VM estén conectados a la misma red virtual, El tráfico pasa por el switch virtual (Linux bridge docker0), donde softflowd lo captura y exporta flujos NetFlow al colector.
 de modo que el tráfico fluya entre direcciones IP distintas. La VM actúa como servidor receptor de las detecciones y, al mismo tiempo, ejecuta un exportador NetFlow (como softflowd) sobre la interfaz por donde entra ese tráfico. Esto garantiza que los paquetes enviados desde el contenedor YOLO hacia la VM atraviesen una interfaz monitoreada.
 
+- Proponga una regla de IP Accounting en el router virtual (p ej iptables o nftables) para medir el tráfico entre la subred del contenedor y la VM
+  
+Una regla que se podría usar con iptables, es agregar una entrada para permitir el tráfico entre esas redes y dejar que el contador de paquetes y bytes de la regla registre los paquetes transportados, esta regla no modifica el flujo de datos, sino que aprovechan los contadores internos de iptables para llevar un registro acumulado de tráfico. Luego, usando comandos como iptables -L -v -n, se pueden consultar los paquetes y bytes asociados a esa comunicación específica, ejemplo de la configuración de la regla:
+
+iptables -A FORWARD -s 172.17.0.0/16 -d 10.0.0.100 -j ACCEPT
+iptables -A FORWARD -s 10.0.0.100 -d 172.17.0.0/16 -j ACCEPT
 
