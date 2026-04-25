@@ -49,7 +49,7 @@ Otro escenario que se podría identificar es la falla de un sistema la primera I
 
 # Parte de diseño 
 
-- Diagrama de camara que simula trafico de personas y vehiculos
+## Diagrama de camara que simula trafico de personas y vehiculos
 
   <img width="3257" height="2452" alt="Diagrama 1" src="https://github.com/user-attachments/assets/a23695e4-95a1-4c63-9f40-03f0d0092dfa" />
   
@@ -70,7 +70,7 @@ Una regla que se podría usar con iptables, es agregar una entrada para permitir
 <img width="3257" height="2452" alt="Diagrama estacion tren" src="https://github.com/user-attachments/assets/152cb32f-8d92-4e99-b80f-3904010982ed" />
 
 - Tabla de IP de contenedores
-- 
+  
 
 <img width="905" height="175" alt="image" src="https://github.com/user-attachments/assets/0d368867-0262-47d0-a351-0fe1706d45a4" />
 
