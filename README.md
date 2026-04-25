@@ -36,3 +36,14 @@ Los 5 campos son:
    
 5. Protocolo IP — número del protocolo de transporte según IANA. Los más comunes son TCP (6), UDP (17) e ICMP (1). Para ICMP no existen puertos, por lo que los campos 3 y 4 se interpretan como tipo y código ICMP.
 
+- Si se desea medir el consumo de ancho de banda por aplicación (ej HTTP vs SSH), 
+
+Se debe revisar el puesto de destino ya que el cliente puede usar un puerto de origen aleatorio, pero el servidor escucha el puerto destino que ya conoce, por ejemplo HTTP usa el puerto 80 y SSH el puerto 22
+
+- Interprete estos datos ¿Qué indicaría una asimetría extrema entre paquetes
+enviados y recibidos entre 192.168.1.10 y 10.0.0.5?
+
+Se puede ver que la cantidad de paquetes que se envían desde 192.168.1.10 es mucho mayor a la que se recibe por parte de 10.0.0.5, esto puede tener varias interpretaciones, un ejemplo de esto puede ser que la primera IP sea un servicio de aplicaciones que envía mucha información y la segunda IP tiene un filtro para que responda solo a ciertos paquetes como confirmación de recibido o un puerto en específico que está configurado con el fin de tener una menor saturación en la red.
+
+Otro escenario que se podría identificar es la falla de un sistema la primera IP envía muchos paquetes y la segunda no responde con una cantidad similar, lo que podría interpretarse como algún ataque de denegación de servicios o que se tiene alguna falla durante el transporte de los quetes lo que causa que no retornen en su totalidad.  
+
