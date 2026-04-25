@@ -71,13 +71,18 @@ Una regla que se podría usar con iptables, es agregar una entrada para permitir
 
 - Tabla de IP de contenedores
 
-  Contenedor	Función	Modelo YOLO	IP	Puerto
-C1	Lectura de placas (YOLO + OCR)	YOLOv8m + EasyOCR	10.0.0.10	9001
-C2	Conteo parqueadero	YOLOv8s	10.0.0.11	9002
-C3	Detección personas (aforo)	YOLOv8n	10.0.0.12	9003
-C4	Detección animales	YOLOv8n (custom)	10.0.0.13	9004
-C5	Objetos perdidos	YOLOv8m (custom)	10.0.0.14	9005
 <img width="905" height="175" alt="image" src="https://github.com/user-attachments/assets/0d368867-0262-47d0-a351-0fe1706d45a4" />
+
+- Flujos de datos
+
+<img width="466" height="88" alt="image" src="https://github.com/user-attachments/assets/630ef708-61bc-4d16-8286-ec6935f0f908" />
+
+- Teniendo en cuenta los siguientes datos:
+Video procesado:30 fps, 640x480, JPEG comprimido → 50 frame. Enviado por UDP.
+Metadata JSON: 200 bytes/detección, 10 detecciones/s. Enviado por TCP.
+
+- Calcule el throughput (Mbps) por contenedor para video y metadata, Throughput total de los 5 contenedores
+
 
 
 
