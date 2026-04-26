@@ -167,6 +167,25 @@ combinando una visualización gráfica y la salida de iptables. A la izquierda s
 
 
 
+Se resetean lo contadores para realizar una prueba final, donde se revisara el tráfico cuando se ejecuta YOLO de manera independiente, para luego inyectar una anomalía dentro de la trama y ver como esto afecta a los paquetes de datos 
+
+
+Durante el proceso se observa un aumento progresivo en la tasa de envío, alcanzando valores cercanos a 52.000 paquetes por segundo, lo cual es muy superior al tráfico normal esperado para este servicio, como resultado del flood, se detecta un incremento abrupto del tráfico, con 500 paquetes adicionales y un volumen aproximado de 60.000 bytes, lo que representa un factor de aumento de 33 veces respecto al tráfico normal previamente medido.
+
+
+<img width="493" height="426" alt="image" src="https://github.com/user-attachments/assets/ae6019e9-f07e-40a9-a9e7-6bc570c6a5e3" />
+
+## Grafica de la anomalia
+
+
+
+
+
+
+
+
+
+
 
 
 
