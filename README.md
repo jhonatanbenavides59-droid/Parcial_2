@@ -144,7 +144,9 @@ IP Accounting usando iptables, donde se simula el comportamiento de un router Ci
 
 Ejecutar YOLO con contadores activos
 
+
 <img width="528" height="565" alt="image" src="https://github.com/user-attachments/assets/a41f6817-3d2a-4b7f-b1aa-27fb62f70ec8" />
+
 
 Primero se indica el comando utilizado (iptables -L INPUT -v -n) para consultar los contadores de paquetes y bytes asociados a las reglas de la cadena INPUT. Al no aparecer resultados directos con grep dpt:5555, se aclara que el tráfico loopback (127.0.0.1) puede no atravesar la cadena INPUT, por lo que se presenta el formato de salida esperado como en el parcial. En ese ejemplo, la regla muestra 20 paquetes y 340 bytes contabilizados, con acción ACCEPT, protocolo UDP y destino al puerto 5555. Finalmente, se explican las columnas de la salida, destacando que pkts y bytes permiten cuantificar el volumen de tráfico recibido, lo que confirma que IP
 
@@ -156,6 +158,13 @@ combinando una visualización gráfica y la salida de iptables. A la izquierda s
 
 
 <img width="1379" height="393" alt="image" src="https://github.com/user-attachments/assets/6f198f15-090e-4144-9646-cd10ff0eff0c" />
+
+
+
+<img width="1355" height="365" alt="image" src="https://github.com/user-attachments/assets/77140bad-74ec-4ebb-9000-154ddd6fbc98" />
+
+
+
 
 
 
