@@ -175,7 +175,22 @@ Durante el proceso se observa un aumento progresivo en la tasa de envío, alcanz
 
 <img width="493" height="426" alt="image" src="https://github.com/user-attachments/assets/ae6019e9-f07e-40a9-a9e7-6bc570c6a5e3" />
 
+
+<img width="526" height="282" alt="image" src="https://github.com/user-attachments/assets/63efb261-7d6f-4a75-8886-1b24e5bcf432" />
+
+
+
 ## Grafica de la anomalia
+
+En el gráfico se observa que durante la fase normal el número de paquetes por ventana de 0,5 segundos se mantiene muy bajo y estable, claramente por debajo del umbral de anomalía fijado en 4 paquetes por ventana. Sin embargo, cuando se inicia la Fase 2, aparece un pico abrupto de tráfico, con cientos de paquetes enviados en un intervalo muy corto, superando ampliamente el umbral establecido.
+
+<img width="1474" height="524" alt="image" src="https://github.com/user-attachments/assets/cfeeda7b-27e5-4595-afb0-a0366df5806c" />
+
+
+<img width="1466" height="474" alt="image" src="https://github.com/user-attachments/assets/438e7510-928b-4ef7-8977-3e818121579a" />
+
+
+
 
 
 
