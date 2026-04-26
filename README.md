@@ -187,6 +187,12 @@ En el gráfico se observa que durante la fase normal el número de paquetes por 
 <img width="1474" height="524" alt="image" src="https://github.com/user-attachments/assets/cfeeda7b-27e5-4595-afb0-a0366df5806c" />
 
 
+
+
+Se puede observar alrededor de 60 000 bytes en muy poco tiempo. La tabla de la derecha refuerza esta interpretación al mostrar que en la fase normal solo se registran 15 paquetes y 255 bytes, mientras que durante el flood se contabilizan 500 paquetes y 60 000 bytes, dando un factor de incremento de 33,3 veces, claramente identificado como ataque
+
+
+
 <img width="1466" height="474" alt="image" src="https://github.com/user-attachments/assets/438e7510-928b-4ef7-8977-3e818121579a" />
 
 
