@@ -207,9 +207,7 @@ Se puede observar alrededor de 60 000 bytes en muy poco tiempo. La tabla de la
 - Puerto destino: 5555
 - Protocolo: UDP (17)
 
-### Ejecutar iptables L v n después de correr YOLO ¿Cuántos bytes se
-contabilizaron? ¿Qué comando usaría para ver solo el tráfico UDP hacia
-el puerto 5555
+### Ejecutar iptables L v n después de correr YOLO ¿Cuántos bytes se contabilizaron? ¿Qué comando usaría para ver solo el tráfico UDP hacia el puerto 5555
 
 Se contabilizaron un total de 60 255 bytes, correspondientes a 515 paquetes UDP acumulados en la regla de IP Accounting del puerto 5555. Este valor incluye tanto el tráfico normal de la Fase 1 (255 bytes) como el tráfico generado durante la anomalía de tipo flood en la Fase 2 (60 000 bytes), lo que confirma un incremento significativo asociado a una posible congestión o ataque
 
