@@ -213,7 +213,11 @@ el puerto 5555
 
 Se contabilizaron un total de 60 255 bytes, correspondientes a 515 paquetes UDP acumulados en la regla de IP Accounting del puerto 5555. Este valor incluye tanto el tráfico normal de la Fase 1 (255 bytes) como el tráfico generado durante la anomalía de tipo flood en la Fase 2 (60 000 bytes), lo que confirma un incremento significativo asociado a una posible congestión o ataque
 
-El comando es iptables -L -v -n | grep "dpt:5555", este comando filtra la lista de reglas y muestra exclusivamente la regla asociada al puerto destino 5555
+El comando es (iptables -L -v -n | grep "dpt:5555"), este comando filtra la lista de reglas y muestra exclusivamente la regla asociada al puerto destino 5555
+
+### Si usted quisiera medir el consumo por aplicación (por ejemplo, diferenciar tráfico HTTP del generado por YOLO), ¿qué campo de la 5 tuple usted analizaría?
+
+Para diferenciar consumo por aplicación usando la 5‑tuple, se debe analizar principalmente el puerto de destino, apoyado por el protocolo y, si es necesario, la IP de origen del contenedor o host que genera el tráfico por ejemplo HTTP → puerto 80, HTTPS → 443, es posible clasificar y separar el tráfico por tipo de aplicación sin necesidad de inspeccionar el contenido de los paquetes. El protocolo (TCP o UDP) refuerza esta clasificación, ya que aplicaciones como HTTP usan TCP
 
 
 
